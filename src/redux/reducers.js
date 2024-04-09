@@ -15,8 +15,16 @@ const cars = (state = [], action) => {
     }
 }
 
+
+
+
 const makes = (state = [], action) => {
     switch(action.type) {
+        case 'FETCH_MAKES' :
+            return action.value
+        case 'REMOVE_MAKES' :
+            console.log(action.value)
+            return state.filter((make) => make.MakeId != action.value)
         default:
             return state
     }
